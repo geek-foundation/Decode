@@ -1,0 +1,64 @@
+<header>
+	{{#if loggedIn}} {{>loggedInHeader}} {{else}} {{> loggedOutHeader}} {{/if}}
+</header>
+
+<section>
+	<div class="showcase">
+		<div class="container grid">
+			<div class="showcase-text">
+				<h2>Easier Project Management</h2>
+				<p>
+					We make projects easier to manage using decode's fully
+					secure online project management webapp.
+				</p>
+			</div>
+	{{#if loggedIn}}{{else}}{{> loginForm}}{{/if}}
+</section>
+
+<section class="features" id="features">
+	<h2 class="md text-center my-4">Features</h2>
+	<div class="container flex">
+		<div class="form-card">
+			<h4>Free to Use</h4>
+			<i class="fas fa fa-user fa-5x text-center"></i>
+		</div>
+		<div class="form-card">
+			<h4>Collaborative Environment</h4>
+			<i class="fas fa fa-users fa-5x text-center"></i>
+		</div>
+		<div class="form-card">
+			<h4>TODO</h4>
+			<i class="fas fa fa-tasks fa-5x text-center"></i>
+		</div>
+		<div class="form-card">
+			<h4>Bug Tracker</h4>
+			<i class="fas fa fa-bug fa-5x text-center"></i>
+		</div>
+		<div class="form-card">
+			<h4>Budget Tracker</h4>
+			<i class="fas fa fa-money fa-5x text-center"></i>
+		</div>
+	</div>
+</section>
+
+{{#if loggedIn}}{{else}}{{> signupform}}{{/if}}
+
+<footer class="footer bg-dark p-4 py-5">
+<div class="grid">
+<div>
+<h1>{{title}}</h1>
+<p> Copyright &copy; 2020</p>
+</div>
+<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/#features">Features</a></li>
+		{{#if loggedIn}}
+		<li><a href="/users/dashboard">Dashboard</a></li>
+		{{else}}
+		<li><a href="/#signup">Signup</a></li>
+		{{/if}}
+	</ul>
+</nav>
+</div>
+</footer>

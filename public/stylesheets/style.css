@@ -1,0 +1,308 @@
+:root{
+  --primary: #0d6efd;
+  --white: #fff;
+  --black: #000000;
+  --blue: #00B7FF;
+}
+
+body {
+  font: "Seogoe UI", Helvetica, Arial, sans-serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+a {
+  color: var(--blue);
+}
+
+#title{
+	color: var(--black);
+	font-size: 3vw;
+	font-weight: bold;
+	text-align: center;
+	font-family: RobotoMono;
+}
+
+/* showcase */
+.showcase{
+  height: 400px;
+  background-color: var(--primary);
+  color: var(--white);
+  position: relative;
+}
+
+.showcase p{
+  margin: 20px 0;
+}
+
+.showcase .grid{
+  grid-template-columns: 55% 45%;
+  gap: 30px;
+  overflow: visible;
+}
+
+.form-card{
+  background-color: var(--white);
+  border-radius: 10px;
+/*  box-shadow: 0 3px 10px rgba(0, 0, 0, 0, 0.2);*/
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 10px;
+  padding: 20px;
+  color: #333;
+}
+
+.showcase-form{
+  position: relative;
+  top: 60px;
+  height: 350px;
+  width: 400px;
+  padding: 40px;
+  z-index: 100;
+  animation: slideInFromRight 1s ease-in;
+}
+
+.showcase-text{
+  animation: slideInFromLeft 1s ease-in;
+}
+
+.showcase .form-item{
+  margin: 30px 0;
+  outline: none;
+}
+
+.showcase-form input{
+  border: 0;
+  border-bottom: 1px solid #b4becb;
+  padding: 3px;
+  font-size: 16px;
+}
+
+.showcase-form input:focus{
+  outline: none;
+}
+
+.showcase::before, .showcase::after{
+  content: '';
+  position: absolute;
+  height: 100px;
+  bottom: -70px;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  transform: skewY(-3deg);
+  --webkit--transform: skewY(-3deg);
+  --moz--transform: skewY(-3deg);
+  --ms--transform: skewY(-3deg);
+}
+
+.btn:hover{
+  transform: scale(1.1);
+}
+
+.features{
+  padding-top: 100px;
+  animation: slideInFromRight 1s ease-in;
+}
+
+.features .flex{
+  flex-wrap: wrap;
+}
+
+.features .form-card{
+  margin: 18px 10px 40px;
+  transition: transform 0.2s ease-in;
+}
+
+.features .form-card:hover{
+  transform: translateY(-15px);
+} 
+
+.features .form-card{
+  text-align: center;
+}
+
+.footer a{
+  text-decoration: none;
+  color: var(--white);
+}
+
+.footer h1,p{
+  color: var(--white);
+}
+
+/* sign Up */
+.signup-form{
+  align-self: center;
+  height: 440px;
+  width: 400px;
+  padding: 40px;
+  z-index: 100;
+  animation: slideInFromRight 1s ease-in;
+}
+
+.signup-text{
+  animation: slideInFromLeft 1s ease-in;
+}
+
+.signup .form-item{
+  margin: 30px 0;
+  outline: none;
+}
+
+.signup-form input{
+  border: 0;
+  border-bottom: 1px solid #b4becb;
+  padding: 3px;
+  font-size: 16px;
+}
+
+.signup-form input:focus{
+  outline: none;
+}
+
+.signup{
+   background-color: var(--primary);
+   color: var(--white);
+   height: 600px;
+   position: relative;
+}
+
+/* Dashboard */
+.dashboard-card{
+  
+}
+
+/* Utilities */
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.grid-3{
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.container{
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: 0 auto;
+  padding: 0 40px;
+}
+
+.sm{
+  font-size: 1rem;
+}
+
+.md{
+  font-size: 2rem;
+}
+
+.lg{
+  font-size: 3rem;
+}
+
+/* Animations */
+@keyframes slideInFromLeft{
+  0%{
+    transform: translateX(-100%);
+  }
+
+  100%{
+    transform: translateX(0);
+  }
+
+}
+
+@keyframes slideInFromRight{
+  0%{
+    transform: translateX(100%);
+  }
+
+  100%{
+    transform: translateX(0);
+  }
+  
+}
+
+@keyframes slideInFromTop{
+  0%{
+    transform: translateY(-100%);
+  }
+
+  100%{
+    transform: translateY(0);
+  }
+  
+}
+
+@keyframes slideInFromBottom{
+  0%{
+    transform: translateY(100%);
+  }
+
+  100%{
+    transform: translateY(0);
+  }
+  
+}
+
+
+/* media queries */
+
+/* tablets and under */
+@media(max-width: 760px){
+
+  .grid,
+  .showcase .grid,
+  .features .grid{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+  }
+
+  .showcase{
+    height: auto;
+  }
+
+  .showcase-text{
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .showcase-form{
+    justify-self: center;
+    margin: auto;
+  }
+
+
+  .signup{
+    height: auto;
+  }
+
+  .signup-text{
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .signup-form{
+    justify-self: center;
+    margin: auto;
+  }
+
+}
+
+/* mobile */
+@media(max-width: 500px){
+
+}
